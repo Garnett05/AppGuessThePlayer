@@ -9,19 +9,20 @@
         <StackLayout>
             <StackLayout>                
                 <Label Text="Group" />
-                <Label Text="Player - Score (1)" />
-                <Label Text="**********" HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding PlayerScore}" />
+                <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" />
+                <Button Text="Show Player" Command="{Binding ShowPlayer}" />
             </StackLayout>
-            <StackLayout Orientation="Vertical">
-                <Label Text="Number" FontSize="100" HorizontalOptions="CenterAndExpand" />
+            <StackLayout IsVisible="{Binding ContainerCountdown}" >
+                <Label Text="{Binding CountdownPlayer}" FontSize="100" HorizontalOptions="CenterAndExpand" />
                 <Label Text="sec" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout>
-                <Button Text="Right" BackgroundColor="LightGreen" />
-                <Button Text="Wrong" BackgroundColor="OrangeRed" />
+                <Button Text="Right" BackgroundColor="LightGreen" Command="RightAnswer" />
+                <Button Text="Wrong" BackgroundColor="OrangeRed" Command="WrongAnswer" />
             </StackLayout>
-            <StackLayout>
-                <Button Text="Start" />
+            <StackLayout IsVisible="{Binding ContainerStart}" >
+                <Button Text="Start" Command="{Binding StartGame}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
