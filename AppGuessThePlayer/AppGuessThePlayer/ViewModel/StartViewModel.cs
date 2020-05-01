@@ -4,6 +4,7 @@ using System.Text;
 using AppGuessThePlayer.Model;
 using System.ComponentModel;
 using Xamarin.Forms;
+using AppGuessThePlayer.Database;
 
 namespace AppGuessThePlayer.ViewModel
 {
@@ -17,6 +18,8 @@ namespace AppGuessThePlayer.ViewModel
         }
         private void StartGame()
         {
+            Storage.Game = this.Game;
+            Storage.Currentround = 1;
             App.Current.MainPage = new View.GamePage();
         }
 
