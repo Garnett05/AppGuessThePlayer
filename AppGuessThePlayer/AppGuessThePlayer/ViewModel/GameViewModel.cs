@@ -83,13 +83,21 @@ namespace AppGuessThePlayer.ViewModel
             Group group;
             if (Database.Storage.Game.Group1 == Group)
             {
-                group = Database.Storage.Game.Group2;
+                group = Database.Storage.Game.Group2;                
             }
             else
             {
                 group = Database.Storage.Game.Group1;
+                Database.Storage.Currentround++;
             }
-            App.Current.MainPage = new View.GamePage(group);
+            if (Database.Storage.Currentround > Database.Storage.Game.Rounds)
+            {
+                App.Current.MainPage = new View.ResultPage();
+            }
+            else
+            {
+                App.Current.MainPage = new View.GamePage(group);
+            }            
         }
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string NameProperty)
