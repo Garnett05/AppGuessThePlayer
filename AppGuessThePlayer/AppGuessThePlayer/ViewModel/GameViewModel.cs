@@ -34,7 +34,7 @@ namespace AppGuessThePlayer.ViewModel
             ShowPlayer = new Command(SortPlayerName);
             RightAnswer = new Command(SortPlayerName);
             WrongAnswer = new Command(SortPlayerName);
-            StartGame = new Command(SortPlayerName);
+            StartGame = new Command(StartAction);
         }        
 
         private void ShowPlayerNameAction()
@@ -48,6 +48,21 @@ namespace AppGuessThePlayer.ViewModel
             IsVisiblePlayer = false;
             IsVisibleContainerStart = true;
         }
+        private void StartAction()
+        {
+            IsVisibleContainerStart = false;
+            IsVisibleContainerCountdown = true;
+
+            int i = Database.Storage.Game.TimeGuesing;
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                CountdownPlayer = i.ToString();
+                i--;
+                return true;
+            }
+            );
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string NameProperty)
         {

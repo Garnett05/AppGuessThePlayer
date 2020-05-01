@@ -15,9 +15,13 @@ namespace AppGuessThePlayer.ViewModel
         public StartViewModel()
         {
             StartCommand = new Command(StartGame);
+            //Necessário instanciar para os objetos não ficarem como null nas telas seguintes
+            Game = new Game();
+            Game.Group1 = new Group();
+            Game.Group2 = new Group();
         }
         private void StartGame()
-        {
+        {            
             Storage.Game = this.Game;
             Storage.Currentround = 1;
             App.Current.MainPage = new View.GamePage();
