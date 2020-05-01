@@ -6,10 +6,19 @@
              mc:Ignorable="d"
              x:Class="AppGuessThePlayer.View.StartPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10" VerticalOptions="CenterAndExpand" >
+            <Label Text="Group 1 Name" />
+            <Entry Placeholder="(Optional)" />
+            <Label Text="Group 2 Name" />
+            <Entry Placeholder="(Optional)" />
+            <Label Text="Level" />
+            <Picker x:Name="pickerLevel" Title="pick the level" />
+            <Label Text="Time (in seconds)" />
+            <Entry Text="120" />
+            <Label Text="Rounds" />
+            <Picker x:Name="pickerRounds" Title="pick the number of rounds" />
+
+            <Button Text="Start" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

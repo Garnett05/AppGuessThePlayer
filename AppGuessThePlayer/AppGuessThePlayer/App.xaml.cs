@@ -10,7 +10,7 @@ namespace AppGuessThePlayer
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new View.StartPage();
         }
 
         protected override void OnStart()

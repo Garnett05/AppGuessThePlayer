@@ -6,6 +6,10 @@
              mc:Ignorable="d"
              x:Class="AppGuessThePlayer.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Label" >
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
