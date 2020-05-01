@@ -24,7 +24,7 @@ namespace AppGuessThePlayer.ViewModel
         {            
             Storage.Game = this.Game;
             Storage.Currentround = 1;
-            App.Current.MainPage = new View.GamePage();
+            App.Current.MainPage = new View.GamePage(Game.Group1);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

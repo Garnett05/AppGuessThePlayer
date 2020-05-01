@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>                
-                <Label Text="Group" HorizontalOptions="Center" />
+                <Label Text="{Binding NameGroup}" HorizontalOptions="Center" />
                 <Label Text="{Binding PlayerScore}" />
                 <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" />
                 <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />

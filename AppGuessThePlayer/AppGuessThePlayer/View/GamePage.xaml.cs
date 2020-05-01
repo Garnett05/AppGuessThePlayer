@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppGuessThePlayer.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,11 @@ namespace AppGuessThePlayer.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GamePage : ContentPage
     {
-        public GamePage()
+        public GamePage(Group group)
         {
             InitializeComponent();
 
-            BindingContext = new ViewModel.GameViewModel();
+            BindingContext = new ViewModel.GameViewModel(group);
         }
     }
 }
