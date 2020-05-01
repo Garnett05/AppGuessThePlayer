@@ -7,7 +7,7 @@
              x:Class="AppGuessThePlayer.View.GamePage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
+            <StackLayout>                
                 <Label Text="Group" />
                 <Label Text="Player - Score (1)" />
                 <Label Text="**********" HorizontalOptions="CenterAndExpand" />

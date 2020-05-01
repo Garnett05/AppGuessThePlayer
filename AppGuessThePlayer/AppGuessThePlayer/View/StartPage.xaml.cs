@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppGuessThePlayer.Model;
 using AppGuessThePlayer.Model.Enum;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+using System.ComponentModel;
 
 namespace AppGuessThePlayer.View
 {
@@ -19,6 +21,7 @@ namespace AppGuessThePlayer.View
             InitializeComponent();
             pickerLevel.ItemsSource = EnumsLevels();
             pickerRounds.ItemsSource = EnumsRounds();
+            BindingContext = new ViewModel.StartViewModel();
         }
 
         public List<GameLevel> EnumsLevels()
@@ -34,6 +37,6 @@ namespace AppGuessThePlayer.View
             foreach (NumberOfRounds x in Enum.GetValues(typeof(NumberOfRounds)))
                 list.Add(x);
             return list;
-        }
+        }        
     }
 }
