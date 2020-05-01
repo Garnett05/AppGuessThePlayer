@@ -7,9 +7,22 @@
              x:Class="AppGuessThePlayer.View.GamePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label Text="Group" />
+                <Label Text="Player - Score (1)" />
+                <Label Text="**********" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Number" FontSize="100" HorizontalOptions="CenterAndExpand" />
+                <Label Text="sec" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Right" BackgroundColor="LightGreen" />
+                <Button Text="Wrong" BackgroundColor="OrangeRed" />
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Start" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
