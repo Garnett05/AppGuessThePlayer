@@ -4,6 +4,7 @@ using System.Text;
 using Xamarin.Forms;
 using System.ComponentModel;
 using AppGuessThePlayer.Model;
+using AppGuessThePlayer.View;
 
 namespace AppGuessThePlayer.ViewModel
 {
@@ -61,9 +62,13 @@ namespace AppGuessThePlayer.ViewModel
 
             int i = Database.Storage.Game.TimeGuesing;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
+            { 
                 CountdownPlayer = i.ToString();
                 i--;
+                if (i < 0)
+                {
+                    CountdownPlayer = "Time's up!";
+                }
                 return true;
             }
             );
@@ -98,7 +103,7 @@ namespace AppGuessThePlayer.ViewModel
             {
                 App.Current.MainPage = new View.GamePage(group);
             }            
-        }
+        }        
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string NameProperty)
         {

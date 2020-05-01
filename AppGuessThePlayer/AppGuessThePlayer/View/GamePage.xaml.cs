@@ -17,7 +17,15 @@ namespace AppGuessThePlayer.View
         {
             InitializeComponent();
 
-            BindingContext = new ViewModel.GameViewModel(group);
+            BindingContext = new ViewModel.GameViewModel(group);                        
+        }
+        public void ClickedPopupTime (object sender, EventArgs args)
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(Database.Storage.Game.TimeGuesing + 1), () =>
+            {
+                DisplayAlert("Time's up", "Time has passed buddy", "Ok");
+                return false;
+            });
         }
     }
 }
