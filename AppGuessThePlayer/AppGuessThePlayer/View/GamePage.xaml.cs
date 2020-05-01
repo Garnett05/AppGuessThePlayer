@@ -15,6 +15,8 @@ namespace AppGuessThePlayer.View
         public GamePage()
         {
             InitializeComponent();
+
+            BindingContext = new ViewModel.GameViewModel();
         }
     }
 }

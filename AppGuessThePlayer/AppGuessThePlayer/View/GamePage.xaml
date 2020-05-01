@@ -8,20 +8,20 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>                
-                <Label Text="Group" />
+                <Label Text="Group" HorizontalOptions="Center" />
                 <Label Text="{Binding PlayerScore}" />
                 <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" />
-                <Button Text="Show Player" Command="{Binding ShowPlayer}" />
+                <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />
             </StackLayout>
-            <StackLayout IsVisible="{Binding ContainerCountdown}" >
+            <StackLayout IsVisible="{Binding IsVisibleContainerCountdown}" >
                 <Label Text="{Binding CountdownPlayer}" FontSize="100" HorizontalOptions="CenterAndExpand" />
                 <Label Text="sec" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout>
-                <Button Text="Right" BackgroundColor="LightGreen" Command="RightAnswer" />
-                <Button Text="Wrong" BackgroundColor="OrangeRed" Command="WrongAnswer" />
+                <Button Text="Right" BackgroundColor="LightGreen" Command="{Binding RightAnswer}" />
+                <Button Text="Wrong" BackgroundColor="OrangeRed" Command="{Binding WrongAnswer}" />
             </StackLayout>
-            <StackLayout IsVisible="{Binding ContainerStart}" >
+            <StackLayout IsVisible="{Binding IsVisibleContainerStart}" >
                 <Button Text="Start" Command="{Binding StartGame}" />
             </StackLayout>
         </StackLayout>
