@@ -4,12 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:conv="clr-namespace:AppGuessThePlayer.View.Util"
              x:Class="AppGuessThePlayer.View.GamePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:Converter x:Key="convScore" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>                
+            <StackLayout>
                 <Label Text="{Binding NameGroup}" HorizontalOptions="Center" />
-                <Label Text="{Binding PlayerScore}" />
+                <Label Text="{Binding GameScore, Converter={StaticResource convScore}}"  />
                 <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" FontSize="20" />
                 <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />
             </StackLayout>
