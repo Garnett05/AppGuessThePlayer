@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:conv="clr-namespace:AppGuessThePlayer.View.Util"
+             xmlns:conv="clr-namespace:AppGuessThePlayer.View.Util"             
+             xmlns:header="clr-namespace:AppGuessThePlayer.View.Util"
              x:Class="AppGuessThePlayer.View.GamePage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -12,24 +13,27 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
-                <Label Text="{Binding NameGroup}" HorizontalOptions="Center" />
-                <Label Text="{Binding GameScore, Converter={StaticResource convScore}}"  />
-                <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" FontSize="20" />
-                <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />
+        <StackLayout Spacing="0" >
+            <header:HeaderPage />
+            <StackLayout Style="{StaticResource globalBackground}" >
+                <StackLayout>
+                    <Label Text="{Binding NameGroup}" HorizontalOptions="Center" />
+                    <Label Text="{Binding GameScore, Converter={StaticResource convScore}}"  />
+                    <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" FontSize="20" />
+                    <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsVisibleContainerCountdown}" >
+                    <Label Text="{Binding CountdownPlayer}" FontSize="90" HorizontalOptions="CenterAndExpand" />
+                    <Label Text="sec" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsVisibleContainerStart}" >
+                    <Button Text="Start" Command="{Binding StartGame}" Clicked="ClickedPopupTime" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Padding="10" >
+                    <Button Text="Right" BackgroundColor="LightGreen" HorizontalOptions="FillAndExpand" Command="{Binding RightAnswer}" />
+                    <Button Text="Wrong" BackgroundColor="OrangeRed" HorizontalOptions="FillAndExpand" Command="{Binding WrongAnswer}" />
+                </StackLayout>
             </StackLayout>
-            <StackLayout IsVisible="{Binding IsVisibleContainerCountdown}" >
-                <Label Text="{Binding CountdownPlayer}" FontSize="90" HorizontalOptions="CenterAndExpand" />
-                <Label Text="sec" HorizontalOptions="CenterAndExpand" />
-            </StackLayout>
-            <StackLayout IsVisible="{Binding IsVisibleContainerStart}" >
-                <Button Text="Start" Command="{Binding StartGame}" Clicked="ClickedPopupTime" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Padding="10" >
-                <Button Text="Right" BackgroundColor="LightGreen" HorizontalOptions="FillAndExpand" Command="{Binding RightAnswer}" />
-                <Button Text="Wrong" BackgroundColor="OrangeRed" HorizontalOptions="FillAndExpand" Command="{Binding WrongAnswer}" />
-            </StackLayout>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

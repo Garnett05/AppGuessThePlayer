@@ -10,6 +10,19 @@
             <Style TargetType="Label" >
                 <Setter Property="TextColor" Value="Black" />
             </Style>
+            <Style TargetType="StackLayout" x:Key="headerBackColor">
+                <Setter Property="BackgroundColor" Value="Green" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+            <Style TargetType="Label" x:Key="headerTitle" >
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="globalBackground" >
+                <Setter Property="BackgroundColor" Value="#D3D3D3" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
