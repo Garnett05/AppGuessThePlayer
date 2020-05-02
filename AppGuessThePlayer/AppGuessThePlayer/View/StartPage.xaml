@@ -12,7 +12,7 @@
             <Label Text="Group 2 Name" />
             <Entry Placeholder="(Optional)" Text="{Binding Game.Group2.Name}" />
             <Label Text="Level" />
-            <Picker x:Name="pickerLevel" SelectedItem="{Binding Game.Level}" Title="pick the level" />
+            <Picker x:Name="pickerLevel" SelectedItem="{Binding Game.Level}" SelectedIndex="{Binding Game.NumericLevel}" Title="pick the level" />
             <Label Text="Time (in seconds)" />
             <Entry Text="{Binding Game.TimeGuesing}" />
             <Label Text="Rounds" />

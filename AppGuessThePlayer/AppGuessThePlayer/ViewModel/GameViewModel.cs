@@ -42,16 +42,41 @@ namespace AppGuessThePlayer.ViewModel
             RightAnswer = new Command(RightAnswerAction);
             WrongAnswer = new Command(WrongAnswerAction);
             StartGame = new Command(StartAction);
-        }        
-
-        private void ShowPlayerNameAction()
-        {
-
         }
+        
         private void SortPlayerName()
         {
-            Player = "Larry Legend";
-            GameScore = 15;
+            var NumLevel = Database.Storage.Game.NumericLevel;
+            if (NumLevel == 0)
+            {
+                Random rd = new Random();
+                int lvl = rd.Next(0, 2);
+                int i = rd.Next(0, Database.Storage.Players[lvl].Length);
+                Player = Database.Storage.Players[lvl][i];
+                GameScore = (byte) ((lvl == 0) ? 1 : (lvl == 1) ? 3 : 5);
+            }
+            else if (NumLevel == 1)
+            {
+                Random rd = new Random();
+                int i = rd.Next(0, Database.Storage.Players[NumLevel - 1].Length);
+                Player = Database.Storage.Players[NumLevel - 1][i];
+                GameScore = 1;
+            }
+            else if (NumLevel == 2)
+            {
+                Random rd = new Random();
+                int i = rd.Next(1, Database.Storage.Players[NumLevel - 1].Length);
+                Player = Database.Storage.Players[NumLevel - 1][i];
+                GameScore = 3;
+            }
+            else if (NumLevel == 3)
+            {
+                Random rd = new Random();
+                int i = rd.Next(2, Database.Storage.Players[NumLevel - 1].Length);
+                Player = Database.Storage.Players[NumLevel - 1][i];
+                GameScore = 5;
+            }
+
             IsVisiblePlayer = false;
             IsVisibleContainerStart = true;
         }
