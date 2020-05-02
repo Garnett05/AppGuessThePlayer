@@ -13,6 +13,7 @@ namespace AppGuessThePlayer.ViewModel
         public Group Group { get; set; }
         private byte _GameScore;
         public string NameGroup { get; set; }
+        public string NumberGroup { get; set; }
         public byte GameScore { get { return _GameScore; } set { _GameScore = value; OnPropertyChanged("GameScore"); } }
         private string _Player;
         public string Player { get { return _Player; } set { _Player = value; OnPropertyChanged("Player"); } }
@@ -33,6 +34,14 @@ namespace AppGuessThePlayer.ViewModel
         {
             Group = group;
             NameGroup = group.Name;
+            if (group == Database.Storage.Game.Group1)
+            {
+                NumberGroup = "Group 1 - ";
+            }
+            else
+            {
+                NumberGroup = "Group 2 - ";
+            }
 
             IsVisibleContainerCountdown = false;
             IsVisibleContainerStart = false;
