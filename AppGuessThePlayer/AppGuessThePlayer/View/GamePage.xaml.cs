@@ -17,7 +17,7 @@ namespace AppGuessThePlayer.View
         {
             InitializeComponent();
 
-            BindingContext = new ViewModel.GameViewModel(group);                        
+            BindingContext = new ViewModel.GameViewModel(group);
         }
         public void ClickedPopupTime (object sender, EventArgs args)
         {

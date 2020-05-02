@@ -8,6 +8,7 @@ namespace AppGuessThePlayer.Database
     public class Storage
     {
         public static Game Game { get; set; }
+        public static ErrorPopup ErrorPopup { get; set; }
         public static short Currentround { get; set; }
         public static string[][] Players =
         {
