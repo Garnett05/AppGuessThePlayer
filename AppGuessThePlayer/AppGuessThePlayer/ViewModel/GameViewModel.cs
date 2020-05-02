@@ -137,6 +137,5 @@ namespace AppGuessThePlayer.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(NameProperty));
             }
         }
-
     }
 }
