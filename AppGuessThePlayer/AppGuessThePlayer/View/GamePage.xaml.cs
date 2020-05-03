@@ -21,7 +21,7 @@ namespace AppGuessThePlayer.View
         }
         public void ClickedPopupTime (object sender, EventArgs args)
         {
-            Device.StartTimer(TimeSpan.FromSeconds(Database.Storage.Game.TimeGuesing + 1), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(Database.Storage.Game.TimeGuesing ), () =>
             {
                 DisplayAlert("Time's up", "Time has passed buddy", "Ok");
                 return false;

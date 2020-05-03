@@ -10,18 +10,26 @@
         <StackLayout Spacing="0" BackgroundColor="#D3D3D3">
             <header:HeaderPage />
             <StackLayout VerticalOptions="CenterAndExpand" Spacing="0" Style="{StaticResource globalBackground}" >
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Label Text="Group 1 - " FontSize="20" />
-                    <Label Text="{Binding Game.Group1.Name} " FontSize="20" />
-                </StackLayout>
-                <Label Text="{Binding Game.Group1.Score}" FontSize="64" HorizontalOptions="Center" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Label Text="Group 2 - " FontSize="20" />
-                    <Label Text="{Binding Game.Group2.Name} " FontSize="20" />
-                </StackLayout>
-                <Label Text="{Binding Game.Group2.Score}" FontSize="64" HorizontalOptions="Center" />                
+                <Frame BorderColor="Black" Margin="0, 0, 0, 5" BackgroundColor="#D3D3D3" >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="Group 1 - " FontSize="20" />
+                            <Label Text="{Binding Game.Group1.Name} " FontSize="20" />
+                        </StackLayout>
+                        <Label Text="{Binding Game.Group1.Score}" FontSize="64" HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="Black" Margin="0, 5, 0, 0" BackgroundColor="#D3D3D3" >
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="Group 2 - " FontSize="20" />
+                            <Label Text="{Binding Game.Group2.Name} " FontSize="20" />
+                        </StackLayout>
+                        <Label Text="{Binding Game.Group2.Score}" FontSize="64" HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
             </StackLayout>
-            <Button Text="Play again" Command="{Binding PlayAgain}" Margin="0,0,0,80" />
-        </StackLayout>        
+            <Button Text="Play again" Command="{Binding PlayAgain}" Margin="10,0,10,80" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

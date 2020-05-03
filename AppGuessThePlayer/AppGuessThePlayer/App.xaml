@@ -11,8 +11,7 @@
                 <Setter Property="TextColor" Value="Black" />
             </Style>
             <Style TargetType="StackLayout" x:Key="headerBackColor">
-                <Setter Property="BackgroundColor" Value="Green" />
-                <Setter Property="Padding" Value="10" />
+                <Setter Property="BackgroundColor" Value="Green" />                
             </Style>
             <Style TargetType="Label" x:Key="headerTitle" >
                 <Setter Property="TextColor" Value="White" />
@@ -22,6 +21,10 @@
                 <Setter Property="BackgroundColor" Value="#D3D3D3" />
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

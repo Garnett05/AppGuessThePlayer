@@ -17,20 +17,27 @@
             <header:HeaderPage />
             <StackLayout Style="{StaticResource globalBackground}" >
                 <StackLayout>
-                    <Label Text="{Binding NameGroup}" HorizontalOptions="Center" />
-                    <Label Text="{Binding GameScore, Converter={StaticResource convScore}}"  />
-                    <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" FontSize="20" />
-                    <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />
+                    <Label Text="{Binding NameGroup}" HorizontalOptions="Center" FontSize="16" FontAttributes="Bold" />
+                    <Label Text="{Binding ActualRound}" HorizontalOptions="Center" />
                 </StackLayout>
-                <StackLayout IsVisible="{Binding IsVisibleContainerCountdown}" >
-                    <Label Text="{Binding CountdownPlayer}" FontSize="90" HorizontalOptions="CenterAndExpand" />
-                    <Label Text="sec" HorizontalOptions="CenterAndExpand" />
-                </StackLayout>
-                <StackLayout IsVisible="{Binding IsVisibleContainerStart}" >
-                    <Button Text="Start" Command="{Binding StartGame}" Clicked="ClickedPopupTime" />
-                </StackLayout>
+                <Frame BackgroundColor="#D3D3D3" BorderColor="Black">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding GameScore, Converter={StaticResource convScore}}"  />
+                            <Label Text="{Binding Player}" HorizontalOptions="CenterAndExpand" FontSize="20" />
+                            <Button Text="Show Player" IsVisible="{Binding IsVisiblePlayer}" Command="{Binding ShowPlayer}" />
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding IsVisibleContainerCountdown}" >
+                            <Label Text="{Binding CountdownPlayer}" FontSize="90" HorizontalOptions="CenterAndExpand" />
+                            <Label Text="sec" HorizontalOptions="CenterAndExpand" />                            
+                        </StackLayout>
+                        <StackLayout IsVisible="{Binding IsVisibleContainerStart}" >
+                            <Button Text="Start" Command="{Binding StartGame}" Clicked="ClickedPopupTime" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>                
                 <StackLayout Orientation="Horizontal" Padding="10" >
-                    <Button Text="Right" BackgroundColor="LightGreen" HorizontalOptions="FillAndExpand" Command="{Binding RightAnswer}" />
+                    <Button Text="Right" BackgroundColor="#3CB371" HorizontalOptions="FillAndExpand" Command="{Binding RightAnswer}" />
                     <Button Text="Wrong" BackgroundColor="OrangeRed" HorizontalOptions="FillAndExpand" Command="{Binding WrongAnswer}" />
                 </StackLayout>
             </StackLayout>

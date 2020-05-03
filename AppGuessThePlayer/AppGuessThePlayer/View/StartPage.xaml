@@ -7,8 +7,8 @@
              mc:Ignorable="d"
              x:Class="AppGuessThePlayer.View.StartPage">
     <ContentPage.Content>
-        <StackLayout Spacing="0" BackgroundColor="#D3D3D3" >
-            <header:HeaderPage />
+        <StackLayout Spacing="0" BackgroundColor="#D3D3D3" >            
+            <header:HeaderPage />            
             <StackLayout Style="{StaticResource globalBackground}" VerticalOptions="CenterAndExpand" >
                 <Label Text="Group 1 Name" />
                 <Entry Placeholder="(Optional)" Text="{Binding Game.Group1.Name}" />
@@ -17,7 +17,7 @@
                 <Label Text="Level" />
                 <Picker x:Name="pickerLevel" SelectedItem="{Binding Game.Level}" SelectedIndex="{Binding Game.NumericLevel}" Title="pick the level" />
                 <Label Text="Time (in seconds)" />
-                <Entry Text="{Binding Game.TimeGuesing}" />
+                <Entry Text="{Binding Game.TimeGuesing}" Keyboard="Numeric" />
                 <Label Text="Rounds" />
                 <Picker x:Name="pickerRounds" SelectedItem="{Binding Game.Rounds}" Title="pick the number of rounds" />
 

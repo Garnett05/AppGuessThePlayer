@@ -29,7 +29,7 @@ namespace AppGuessThePlayer.ViewModel
                 ErrorPopup error = new ErrorPopup();
                 error.Title = "Error!";
                 error.Message = "The time should be between 10 and 180 seconds.";
-                var nextPage = new PopupErrorPage(error);
+                var nextPage = new PopupErrorPage(error, false);
                 PopupNavigation.Instance.PushAsync(nextPage);
             }
             else

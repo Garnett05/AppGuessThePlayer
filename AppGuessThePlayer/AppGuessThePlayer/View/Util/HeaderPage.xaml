@@ -5,9 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppGuessThePlayer.View.Util.HeaderPage">
-  <ContentView.Content>
-      <StackLayout Style="{StaticResource headerBackColor}">
-          <Label Text="Guess the Celtic Player" Style="{StaticResource headerTitle}" />
-      </StackLayout>
-  </ContentView.Content>
+    <ContentView.Content>
+        <StackLayout Style="{StaticResource headerBackColor}" Orientation="Horizontal" >
+            <Label Text="Guess the Celtic Player" Style="{StaticResource headerTitle}" VerticalOptions="Center" Padding="5" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="5, 5, 5, 5" >
+                <Label Text="Restart" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="10" FontSize="14" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RestartAction" />
+                    </Label.GestureRecognizers>                    
+                </Label>
+                <Image Source="celtics.png" BackgroundColor="Transparent" HeightRequest="60" />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>

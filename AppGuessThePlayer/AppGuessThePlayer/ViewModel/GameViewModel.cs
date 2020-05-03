@@ -14,6 +14,7 @@ namespace AppGuessThePlayer.ViewModel
         private byte _GameScore;
         public string NameGroup { get; set; }
         public string NumberGroup { get; set; }
+        public string ActualRound { get; set; }
         public byte GameScore { get { return _GameScore; } set { _GameScore = value; OnPropertyChanged("GameScore"); } }
         private string _Player;
         public string Player { get { return _Player; } set { _Player = value; OnPropertyChanged("Player"); } }
@@ -34,6 +35,7 @@ namespace AppGuessThePlayer.ViewModel
         {
             Group = group;
             NameGroup = group.Name;
+            ActualRound = "Current round: " + Database.Storage.Currentround;
             if (group == Database.Storage.Game.Group1)
             {
                 NumberGroup = "Group 1 - ";
@@ -59,7 +61,7 @@ namespace AppGuessThePlayer.ViewModel
             if (NumLevel == 0)
             {
                 Random rd = new Random();
-                int lvl = rd.Next(0, 2);
+                int lvl = rd.Next(0, 3);
                 int i = rd.Next(0, Database.Storage.Players[lvl].Length);
                 Player = Database.Storage.Players[lvl][i];
                 GameScore = (byte) ((lvl == 0) ? 1 : (lvl == 1) ? 3 : 5);
@@ -85,7 +87,7 @@ namespace AppGuessThePlayer.ViewModel
                 Player = Database.Storage.Players[NumLevel - 1][i];
                 GameScore = 5;
             }
-
+            
             IsVisiblePlayer = false;
             IsVisibleContainerStart = true;
         }
@@ -93,15 +95,17 @@ namespace AppGuessThePlayer.ViewModel
         {
             IsVisibleContainerStart = false;
             IsVisibleContainerCountdown = true;
-
+                        
             int i = Database.Storage.Game.TimeGuesing;
+            CountdownPlayer = i.ToString();
+            i--;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             { 
                 CountdownPlayer = i.ToString();
                 i--;
                 if (i < 0)
                 {
-                    CountdownPlayer = "Time's up!";
+                    CountdownPlayer = "Finish!";
                 }
                 return true;
             }

@@ -8,5 +8,6 @@ namespace AppGuessThePlayer.Model
     {
         public string Title { get; set; }
         public string Message { get; set; }
+        public bool UserAction { get; set; }
     }
 }

@@ -16,16 +16,27 @@ namespace AppGuessThePlayer.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PopupErrorPage : PopupPage
     {
-        public PopupErrorPage(ErrorPopup errorPopup)
+        public PopupErrorPage(ErrorPopup errorPopup, bool PopupHasAnswer)
         {
             InitializeComponent();
             lblTitle.Text = errorPopup.Title;
             lblMessage.Text = errorPopup.Message;
-            
+            if (PopupHasAnswer == true)
+            {
+                userAnswer.IsVisible = true;
+            }
+
+            Database.Storage.ErrorPopup = new ErrorPopup();
         }
-        private void ClosePage (object sender, EventArgs args)
+        private void UserActionFalse(object sender, EventArgs args)
+        {            
+        }
+        private void UserActionTrue(object sender, EventArgs args)
+        {            
+        }
+        private void ClosePage(object sender, EventArgs args)
         {
-            PopupNavigation.Instance.PopAsync();
+            PopupNavigation.Instance.PopAllAsync();
         }
     }
 }

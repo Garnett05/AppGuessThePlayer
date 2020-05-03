@@ -21,6 +21,18 @@
            BackgroundColor="#404040" HeightRequest="140" >
         <StackLayout HorizontalOptions="Center" >
             <Label x:Name="lblTitle" VerticalOptions="Start" FontSize="24" TextColor="White" />
+            <StackLayout x:Name="userAnswer" IsVisible="False" >
+                <Label Text="Yes" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UserActionTrue" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="No" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UserActionFalse" />
+                    </Label.GestureRecognizers>
+                </Label>                
+            </StackLayout>
             <Label x:Name="lblMessage" VerticalOptions="CenterAndExpand" TextColor="White" />
             <Label Text="Ok" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" TextColor="#00e6ac" >
                 <Label.GestureRecognizers>
